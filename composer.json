@@ -1,0 +1,19 @@
+{
+    "name" : "ikto/pgi-migration-directories",
+    "type" : "library",
+    "description" : "Simple PostgreSQL OOP interface",
+    "keywords": [],
+    "authors": [
+        {
+            "name" : "Maxim Polishchuck",
+            "email" : "mpolishchuck@ikto.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "symfony/finder": ">=3.4"
+    },
+    "autoload" : {
+        "psr-4" : { "IKTO\\PgiMigrationDirectories\\" : ["src/"] }
+    }
+}
