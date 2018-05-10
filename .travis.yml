@@ -1,0 +1,13 @@
+language: php
+php:
+    - '7.0'
+    - '7.1'
+    - '7.2'
+services:
+    - postgresql
+install:
+    - composer install
+notifications:
+  slack:
+    rooms:
+      - secure: bm8+Fr06Y283q3AF+9/yZuMTOt8XFuciN6x05cty+Kb4CnBzPw5LOnjxf68B7q87ChtxjoJGyyuR+2HHbb0Dph3lUjxZWf5VFGbEy33Sxe+w8zHMkCscYBt0pACBSMoWC4qnpJIEKuyGdM5nTKgwX+nYJakcHsGzQQijYW8cfgl6Yf37TyDxl9ilm3EPj8UqJSn++CprzB5C7p/GZMIglxWjzVL6dwbAPLzrDq9D+/M6JFEVHdZqvn8LU86oNPP3x0B04vDtJuOcRpavmyC3oWLwAYVvzUaUvYCW79Mq2k3o2joOzqqTgkWyi1SAbobSYc/ULEv35xmYSb3g42pCgoqq5q19ySNPpiyBE/rXlIrKhCbBukHMTk66C9j7izX2RUSARRZvGZ4HfYDhi+p69dU1Raa5kt4/VrAMMR9YZKzkYzfU5yPbf/3hwalkbM8z30rFrWd2usxjf7scDHhDCNqEnsqErytMqwUC2PV4CpOj4Ub16t/xB3OfsfFChkOjd0dATJFJ/dSMVS1h+heS7SZaFFavm7aUx+iWa9arvCzR1cWeAeSHUAKhoqdfkzGd097o2k/JLQip6c+eN5YTfl5WCpVAfI1Iw02YB9Dpl8HhOkDQtza145wYR+Ok8AxYGkHB66qEBCzgyNBGE++Ny830a5vDas8ODd28g/AuF78=
