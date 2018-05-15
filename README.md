@@ -9,7 +9,7 @@ This library is inspired by [DBIx::Migration::Directories](http://search.cpan.or
 ## Features
 
  - Installing database schema from scratch (into empty database).
- - Execute SQL files to upgrade/downgrade database schemas.
+ - Execution of SQL files to upgrade/downgrade database schemas.
 
 ## Requirements (environment)
 
@@ -40,7 +40,7 @@ In other words each directory contains instructions how to update the db schema 
 If directory name contains only one version number - it will be considered as *0*-*[version]*.
 Zero version number means that db schema is not installed yet.
 Each version-named directory should contain a set of SQL files.
-The naming of SQL file is arbitrary, but please note, when performing migration SQL files will be sorted alphabetically.
+The naming of SQL files is arbitrary, but please note, when performing migration SQL files will be sorted alphabetically.
 
 
 As we have the migrations directory prepared, we can proceed with migration.
