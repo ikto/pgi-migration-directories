@@ -53,7 +53,7 @@ class MigrationTest extends TestCase
             $startingVersion = $migration->getStartingVersion();
             $targetVersion = $migration->getTargetVersion();
 
-            $this->assertEquals(($startingVersion+1), $targetVersion);
+            $this->assertEquals(($startingVersion + 1), $targetVersion);
         }
     }
 }
