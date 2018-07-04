@@ -11,3 +11,5 @@ notifications:
   slack:
     rooms:
       - secure: MP+whwNm1wxG+OfG0qfrp7ynftDrbsut+4tCYnVCdEC+vTyvp7rE0wHIpS+REXkCkCK0O3oH8sSGAS7Z9VH0DveuqFRbKz0Z9Y28WYlHCEvVHTZ9fsPx/Z5jGV2BrYwVpEA9rrLDXxXaxz8Kf53QhdBtOToWtIjQ5t/NplZTGBFXKs2cowqNZI/OpoVzGvXB63TOTqXM/61fKDxedkJLm6FaUHMwy7ITkyFiTCHEovgEnCdOBU2k2EMuHBauEnSWSLJN0IZQABfB5jb0BbCSplANuuMDz5QJu2Ss1Rf0xPjQcde2ZvuFO9fUMBOx/+tTSkiAJypqlCb1LSXvWGc7Ttjqbz+yHcK3TECUooSObMI+/kWPRzXv6/BM7QenaHGS3CzgPsXxRynAL0yuo8tZ0NlV4Qh5jHnYN9nRxCf86UXYk0MZ53A00QwdkVJHK5+IBnOV8QEf0R9JbTYDhu1iIY/5lYXgphyHnhvSVZ3/lGtp6fohXfkha3q+XBkfMvB4sQM3WRPUH4/yKFG7TwsDKUv3Q15OhT/IE9pe/gNBUq/y6ZfNtk3bj92nMUCRrvEAG4LXsaOGbKgNZC5IIOCw96LC+lXzqSZghtcQ+YJuyQySjiT+gicQD5IzbA1JKpGTxu6BxgME1UxgYgHjXEewRkPimz9Q1uNdAlnX+FJ0LFw=
+before_script:
+    - psql -c 'create database backlist;' -U postgres
