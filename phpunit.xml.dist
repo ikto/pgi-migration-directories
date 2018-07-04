@@ -7,6 +7,11 @@
          colors="true"
          bootstrap="./vendor/autoload.php"
         >
+    <php>
+        <var name="test_db_dsn" value="host=localhost port=5432 dbname=backlist"/>
+        <var name="test_db_user" value="postgres"/>
+        <var name="test_db_pass" value="postgres"/>
+    </php>
 
     <testsuites>
         <testsuite name="PgI Migration Directories Test Suite">
