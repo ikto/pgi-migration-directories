@@ -48,7 +48,7 @@ As we have the migrations directory prepared, we can proceed with migration.
 ### Performing migration
 
 ```php
-use IKTO/PgI;
+use IKTO\PgI;
 use IKTO\PgiMigrationDirectories\Database\DefaultManagedDatabase;
 use IKTO\PgiMigrationDirectories\Processor\ProcessorFactory;
 use IKTO\PgiMigrationDirectories\Discovery\StandardDiscovery;
@@ -60,10 +60,11 @@ use IKTO\PgiMigrationDirectories\MigrationPathBuilder\MigrationPathBuilder;
 
 // Connecting to the database.
 $dbh = PgI::connect('host=127.0.0.1 port=5432 dbname=pgi_test', 'postgres', 'postgres');
-// Creting managed db.
+// Creating managed db.
 $migration_db = new DefaultManagedDatabase($dbh, 'DBSCHEMANAME', 'public');
 // Setting processor factory.
 $migration_db->setProcessorFactory(new ProcessorFactory());
+// Specifying target db version. In real app it will come from config or something like this.
 $migration_db->setDesiredVersion(42);
 
 /**
@@ -109,7 +110,8 @@ These table should be created with the first migration which install the db sche
 ```sql
 CREATE TABLE migration_schema_version (
     name character varying(128) NOT NULL,
-    version real NOT NULL
+    version real NOT NULL,
+    CONSTRAINT migration_schema_version_pkey PRIMARY KEY (name)
 );
 ```
 
@@ -119,7 +121,11 @@ CREATE TABLE migration_schema_log (
     schema_name character varying(128) NOT NULL,
     event_time timestamp with time zone DEFAULT now() NOT NULL,
     old_version real DEFAULT 0 NOT NULL,
-    new_version real NOT NULL
+    new_version real NOT NULL,
+    CONSTRAINT migration_schema_log_pkey PRIMARY KEY (id),
+    CONSTRAINT migration_schema_log_schema_name_fkey FOREIGN KEY (schema_name)
+        REFERENCES migration_schema_version (name) MATCH SIMPLE
+        ON UPDATE CASCADE ON DELETE CASCADE DEFERRABLE INITIALLY IMMEDIATE
 );
 ```
 
