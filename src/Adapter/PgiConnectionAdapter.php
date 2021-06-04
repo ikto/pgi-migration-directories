@@ -8,7 +8,6 @@ use IKTO\PgMigrationDirectories\Adapter\ConnectionAdapterInterface;
 
 class PgiConnectionAdapter implements ConnectionAdapterInterface
 {
-
     /**
      * @var PgiDatabaseInterface|PgiConvenientDatabaseInterface
      */

@@ -7,7 +7,7 @@ Now it is a connection adapter for [Pg Migration Directories](https://github.com
 
 ## Requirements (environment)
 
-- PHP 7.0 or higher
+- PHP 7.1 or higher
 - [PgI](https://github.com/ikto/pgi) library
 - [Pg Migration Directories](https://github.com/ikto/pg-migration-directories) library
 
